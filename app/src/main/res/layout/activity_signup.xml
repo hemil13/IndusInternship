@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:gravity="center"
+            android:text="Create Account"
+            android:textSize="@dimen/_25sdp"
+            android:textColor="@color/blue"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create an account so you can explore all the existing jobs"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:textSize="@dimen/_16sdp"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:hint="Name"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:hint="Email"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:hint="Contact"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:hint="Password"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:hint="Confirm Password"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Already Have An Account"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            />
+
+        <Button
+            android:background="@drawable/custom_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:text="Sign Up"
+            android:textSize="@dimen/_16sdp"
+            android:padding="@dimen/_7sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:backgroundTint="@null"
+
+            />
+
+
+    </LinearLayout>
+
+</ScrollView>
