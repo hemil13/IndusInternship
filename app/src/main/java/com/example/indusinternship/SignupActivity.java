@@ -1,6 +1,10 @@
 package com.example.indusinternship;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,16 +13,42 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SignupActivity extends AppCompatActivity {
+    EditText name, email, contact, password, cnfpassword;
+    Button signup;
+
+    String email_pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_signup);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        name = findViewById(R.id.signup_name);
+        email = findViewById(R.id.signup_email);
+        contact = findViewById(R.id.signup_contact);
+        password = findViewById(R.id.signup_password);
+        cnfpassword = findViewById(R.id.signup_cnf_password);
+
+        signup = findViewById(R.id.signup_button);
+
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(name.getText().toString().trim().equals("")){
+                    name.setError("Invalid Name");
+                }
+                if(!email.getText().toString().trim().matches(email_pattern)){
+                    email.setError("Invalid Email");
+                }
+                if(contact.getText().toString().trim().length()<10){
+
+                }
+
+                else{
+                    Toast.makeText(SignupActivity.this, "Signup Successful", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
     }
 }

@@ -35,6 +35,7 @@
 
 
         <EditText
+            android:id="@+id/signup_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_60sdp"
@@ -44,6 +45,7 @@
 
 
         <EditText
+            android:id="@+id/signup_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
@@ -52,6 +54,7 @@
             />
 
         <EditText
+            android:id="@+id/signup_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
@@ -60,6 +63,7 @@
             />
 
         <EditText
+            android:id="@+id/signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
@@ -68,6 +72,7 @@
             />
 
         <EditText
+            android:id="@+id/signup_cnf_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_15sdp"
@@ -86,6 +91,7 @@
             />
 
         <Button
+            android:id="@+id/signup_button"
             android:background="@drawable/custom_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
