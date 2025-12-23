@@ -41,10 +41,21 @@ public class SignupActivity extends AppCompatActivity {
                 if(!email.getText().toString().trim().matches(email_pattern)){
                     email.setError("Invalid Email");
                 }
-                if(contact.getText().toString().trim().length()<10){
-
+                if(contact.getText().toString().trim().equals("")){
+                    contact.setError("Enter a contact number");
                 }
-
+                if(contact.getText().toString().trim().length()<10){
+                    contact.setError("Invalid Contact Number");
+                }
+                if(password.getText().toString().trim().equals("")){
+                    password.setError("Enter a Password");
+                }
+                if(password.getText().toString().trim().length()<8){
+                    password.setError("Password must be 8 characters long");
+                }
+                if(!cnfpassword.getText().toString().trim().matches(password.getText().toString().trim())){
+                    cnfpassword.setError("Password doesn't match");
+                }
                 else{
                     Toast.makeText(SignupActivity.this, "Signup Successful", Toast.LENGTH_SHORT).show();
                 }
