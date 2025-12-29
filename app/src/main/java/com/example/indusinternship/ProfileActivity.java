@@ -58,14 +58,14 @@ public class ProfileActivity extends AppCompatActivity {
                 update.setVisibility(GONE);
                 edit.setVisibility(VISIBLE);
 
+                sp.edit().putString(ConstantSp.name, name.getText().toString()).commit();
+                sp.edit().putString(ConstantSp.email, email.getText().toString()).commit();
+                sp.edit().putString(ConstantSp.contact, contact.getText().toString()).commit();
+                sp.edit().putString(ConstantSp.password, password.getText().toString()).commit();
+
                 setData(false);
             }
         });
-
-
-
-
-
     }
 
     private void setData(boolean b) {
