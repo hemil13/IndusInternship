@@ -1,5 +1,7 @@
 package com.example.indusinternship;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +20,8 @@ public class SignupActivity extends AppCompatActivity {
 
     String email_pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
+    SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,8 @@ public class SignupActivity extends AppCompatActivity {
         cnfpassword = findViewById(R.id.signup_cnf_password);
 
         signup = findViewById(R.id.signup_button);
+
+        sp = getSharedPreferences(ConstantSp.pref, MODE_PRIVATE);
 
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +63,15 @@ public class SignupActivity extends AppCompatActivity {
                     cnfpassword.setError("Password doesn't match");
                 }
                 else{
+
+                    sp.edit().putString(ConstantSp.name, name.getText().toString()).commit();
+                    sp.edit().putString(ConstantSp.email, email.getText().toString()).commit();
+                    sp.edit().putString(ConstantSp.contact, contact.getText().toString()).commit();
+                    sp.edit().putString(ConstantSp.password, password.getText().toString()).commit();
+
                     Toast.makeText(SignupActivity.this, "Signup Successful", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignupActivity.this, ProfileActivity.class);
+                    startActivity(intent);
                 }
             }
         });

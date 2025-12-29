@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Toast.makeText(MainActivity.this, "Login Succesfully", Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
-                Snackbar.make(view, "Login Successfully", Snackbar.LENGTH_SHORT).show();
+//                Snackbar.make(view, "Login Successfully", Snackbar.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 

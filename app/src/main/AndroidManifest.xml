@@ -12,8 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IndusInternship">
         <activity
-            android:name=".SignupActivity"
+            android:name=".ProfileActivity"
             android:exported="true" >
+
+
+
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +32,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
 
         </activity>
 
