@@ -6,78 +6,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+
+    >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_70sdp"
         android:gravity="center"
+        android:layout_marginTop="@dimen/_70sdp"
         android:text="Login Here"
-        android:textSize="@dimen/_25sdp"
         android:textColor="@color/blue"
+        android:textSize="@dimen/_25sdp"
         />
 
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/text_16"
         android:text="Welcome Back you've \nbeen missed"
         android:gravity="center"
         android:layout_marginTop="@dimen/_30sdp"
-        android:textSize="@dimen/_16sdp"
         />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/edit_20"
+        android:background="@drawable/custom_background"
         android:layout_marginTop="@dimen/_60sdp"
         android:hint="Email"
-        android:layout_marginHorizontal="@dimen/_20sdp"
         />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/edit_20"
+        android:background="@drawable/custom_background"
         android:layout_marginTop="@dimen/_15sdp"
         android:hint="Password"
-        android:layout_marginHorizontal="@dimen/_20sdp"
         />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        style="@style/text_16"
         android:text="Forget Your Password?"
         android:layout_marginTop="@dimen/_7sdp"
-        android:textSize="@dimen/_16sdp"
         android:gravity="right"
         android:layout_marginHorizontal="@dimen/_20sdp"
         android:textColor="@color/blue"
+
         />
 
     <TextView
         android:id="@+id/create_new_account"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create New Account"
+        style="@style/text_18"
         android:layout_marginTop="@dimen/_20sdp"
-        android:textSize="@dimen/_16sdp"
-        android:gravity="center"
-        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:text="Create New Account"
         />
     
     <Button
         android:id="@+id/login_button"
-        android:background="@drawable/custom_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_40sdp"
-        android:text="Sign In"
-        android:textSize="@dimen/_16sdp"
-        android:padding="@dimen/_7sdp"
-        android:layout_marginHorizontal="@dimen/_20sdp"
+        style="@style/button_16"
         app:backgroundTint="@null"
-
+        android:text="Sign In"
+        android:layout_marginTop="@dimen/_40sdp"
         />
 
 </LinearLayout>

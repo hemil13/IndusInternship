@@ -86,27 +86,17 @@
             />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Already Have An Account"
+            style="@style/text_18"
             android:layout_marginTop="@dimen/_18sdp"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:text="Already Have An Account"
             />
 
         <Button
             android:id="@+id/signup_button"
-            android:background="@drawable/custom_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_40sdp"
+            style="@style/button_16"
             android:text="Sign Up"
-            android:textSize="@dimen/_16sdp"
-            android:padding="@dimen/_7sdp"
-            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_40sdp"
             app:backgroundTint="@null"
-
             />
 
 
