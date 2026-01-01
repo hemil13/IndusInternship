@@ -29,6 +29,7 @@
         />
 
     <EditText
+        android:id="@+id/login_email"
         style="@style/edit_20"
         android:background="@drawable/custom_background"
         android:layout_marginTop="@dimen/_60sdp"
@@ -38,6 +39,7 @@
         />
 
     <EditText
+        android:id="@+id/login_password"
         style="@style/edit_20"
         android:background="@drawable/custom_background"
         android:layout_marginTop="@dimen/_15sdp"
