@@ -33,6 +33,8 @@
         android:background="@drawable/custom_background"
         android:layout_marginTop="@dimen/_60sdp"
         android:hint="Email"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="@dimen/_10sdp"
         />
 
     <EditText
