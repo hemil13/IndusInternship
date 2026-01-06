@@ -90,6 +90,20 @@
             />
 
         <Button
+            android:id="@+id/profile_delete"
+            android:background="@drawable/custom_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:text="Delete Profile"
+            android:textSize="@dimen/_16sdp"
+            android:padding="@dimen/_7sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:backgroundTint="@null"
+
+            />
+
+        <Button
             android:id="@+id/profile_update"
             android:background="@drawable/custom_button"
             android:layout_width="match_parent"

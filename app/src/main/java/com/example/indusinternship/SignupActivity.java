@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class SignupActivity extends AppCompatActivity {
     EditText name, email, contact, password, cnfpassword;
     Button signup;
+    TextView already_account;
 
     String email_pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
@@ -40,10 +42,20 @@ public class SignupActivity extends AppCompatActivity {
         contact = findViewById(R.id.signup_contact);
         password = findViewById(R.id.signup_password);
         cnfpassword = findViewById(R.id.signup_cnf_password);
+        already_account = findViewById(R.id.already_account);
 
         signup = findViewById(R.id.signup_button);
 
         sp = getSharedPreferences(ConstantSp.pref, MODE_PRIVATE);
+
+        already_account.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                   Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                   startActivity(intent);
+               }
+           }
+        );
 
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -64,9 +76,6 @@ public class SignupActivity extends AppCompatActivity {
                 else if(password.getText().toString().trim().equals("")){
                     password.setError("Enter a Password");
                 }
-//                if(password.getText().toString().trim().length()<8){
-//                    password.setError("Password must be 8 characters long");
-//                }
                 else if(!cnfpassword.getText().toString().trim().matches(password.getText().toString().trim())){
                     cnfpassword.setError("Password doesn't match");
                 }

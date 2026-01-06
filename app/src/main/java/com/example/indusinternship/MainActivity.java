@@ -1,6 +1,7 @@
 package com.example.indusinternship;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -21,17 +22,20 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView create_account;
+    TextView create_account, forget_pwd;
     Button login;
 
     EditText email, password;
 
     SQLiteDatabase db;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sp = getSharedPreferences(ConstantSp.pref, MODE_PRIVATE);
 
         db = openOrCreateDatabase("IndusInternship.db", MODE_PRIVATE, null);
         String createTable = "CREATE TABLE IF NOT EXISTS user(userid INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(100), email VARCHAR(100), contact VARCHAR(10), password VARCHAR(20))";
@@ -42,12 +46,21 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.login_button);
         email = findViewById(R.id.login_email);
         password = findViewById(R.id.login_password);
+        forget_pwd = findViewById(R.id.forget_pwd);
 
 
         create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        forget_pwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ForgetPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -61,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
                 Cursor cursor = db.rawQuery(checkUser, null);
 
                 if(cursor.getCount()>0){
+
+                    while(cursor.moveToNext()){
+                        sp.edit().putString(ConstantSp.userid, String.valueOf(cursor.getInt(0))).commit();
+                        sp.edit().putString(ConstantSp.name, cursor.getString(1)).commit();
+                        sp.edit().putString(ConstantSp.email, cursor.getString(2)).commit();
+                        sp.edit().putString(ConstantSp.contact, cursor.getString(3)).commit();
+                        sp.edit().putString(ConstantSp.password, cursor.getString(4)).commit();
+                    }
+
+
+
+
 //                Toast.makeText(MainActivity.this, "Login Succesfully", Toast.LENGTH_SHORT).show();
                     Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
 //                Snackbar.make(view, "Login Successfully", Snackbar.LENGTH_SHORT).show();
