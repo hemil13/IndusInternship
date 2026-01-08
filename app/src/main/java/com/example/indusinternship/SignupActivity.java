@@ -99,7 +99,7 @@ public class SignupActivity extends AppCompatActivity {
                         sp.edit().putString(ConstantSp.password, password.getText().toString()).commit();
 
                         Toast.makeText(SignupActivity.this, "Signup Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(SignupActivity.this, ProfileActivity.class);
+                        Intent intent = new Intent(SignupActivity.this, DashboardActivity.class);
                         startActivity(intent);
                     }
 
